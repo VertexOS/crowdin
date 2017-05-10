@@ -1,0 +1,50 @@
+Crowdin guide
+=============
+
+Introduction
+------------
+This simple guide helps you to set up and use crowdin for your Android ROM project.
+
+Prerequisites
+-------------
+Please setup crowdin-cli by following the instructions at <https://github.com/crowdin/crowdin-cli-2>.
+
+Set up environment variables
+----------------------------
+Add the following to your **.bashrc**, and replace the values with your own:
+```
+    export CROWDIN_API_KEY=your_api_key
+    export CROWDIN_BASE_PATH=your_base_path
+    export CROWDIN_PROJECT_NAME=your_project_name
+```
+
+Example:
+```
+    export CROWDIN_API_KEY=1234567890abcdefg
+    export CROWDIN_BASE_PATH=/home/joshua/vertexos
+    export CROWDIN_PROJECT_NAME=vertexos
+```
+
+Uploading sources/translations
+------------------------------
+Within the directory of your crowdin.yaml file, execute the following:
+```
+crowdin upload
+```
+
+Downloading sources/translations
+--------------------------------
+To download all translations (slow):
+```
+crowdin download
+```
+
+To download translations from a single language:
+```
+crowdin download -l {language_code}
+```
+
+To display a list of latest translations from Crowdin:
+```
+crowdin download --dryrun
+```
